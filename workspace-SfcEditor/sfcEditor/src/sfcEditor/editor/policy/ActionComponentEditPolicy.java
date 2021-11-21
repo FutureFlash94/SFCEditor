@@ -65,16 +65,18 @@ public class ActionComponentEditPolicy extends ComponentEditPolicy {
  
     @Override
     public Command getCommand(Request request) {
-        if(request.getType().equals(ShowNameAction.REQ_SHOW_NAME)) {
+    	Object requestType = request.getType();
+    	
+        if(requestType.equals(ShowNameAction.REQ_SHOW_NAME)) {
             return createShowNameCommand();
         }
-        if(request.getType().equals(ShowNameQualifierAction.REQ_SHOW_NAME_QUALIFIER)) {
+        if(requestType.equals(ShowNameQualifierAction.REQ_SHOW_NAME_QUALIFIER)) {
             return createShowNameQualifierActionCommand();
         }
-        if(request.getType().equals(ShowNameQualifierIndicatorAction.REQ_SHOW_NAME_QUALIFIER_INDICATOR)) {
+        if(requestType.equals(ShowNameQualifierIndicatorAction.REQ_SHOW_NAME_QUALIFIER_INDICATOR)) {
             return createShowNameQualifierIndicatorActionCommand();
         }
-        if(request.getType().equals(ShowNameQualifierIndicatorInstructionsAction.REQ_SHOW_NAME_QUALIFIER_INDICATOR_INSTRUCTIONS)) {
+        if(requestType.equals(ShowNameQualifierIndicatorInstructionsAction.REQ_SHOW_NAME_QUALIFIER_INDICATOR_INSTRUCTIONS)) {
             return createShowNameQualifierIndicatorInstructionsActionCommand();
         }
         return super.getCommand(request);
