@@ -1,0 +1,7 @@
+*.log
+*.project
+*.DS_Store
+*.classpath
+*.metadata/
+*.settings/
+workspace-SfcEditor/sfcmodel.model/

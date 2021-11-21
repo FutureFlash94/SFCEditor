@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sfcmodel:SequentialFunctionChart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sfcmodel="www.tuwien.ac.at/e1425203/SfcEditor">
+  <sfcObjects xsi:type="sfcmodel:InitialStep" name="S_1" startPoint="302,27" endPoint="302,77" X="true" T="0.0" constraintsRectangle="272,27,60,50" incomingConnections="//@connections.40" outgoingConnections="//@connections.10 //@connections.35"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="302,86" endPoint="302,111" condition="bvar1" constraintsRectangle="252,86,100,25" incomingConnections="//@connections.10" outgoingConnections="//@connections.11 //@connections.12 //@connections.13"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S2" startPoint="206,160" endPoint="206,210" X="false" T="0.0" constraintsRectangle="176,160,60,50" incomingConnections="//@connections.11" outgoingConnections="//@connections.14"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S3" startPoint="302,160" endPoint="302,210" X="false" T="0.0" constraintsRectangle="272,160,60,50" incomingConnections="//@connections.12" outgoingConnections="//@connections.15"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S4" startPoint="391,160" endPoint="391,210" X="false" T="0.0" constraintsRectangle="361,160,60,50" incomingConnections="//@connections.13" outgoingConnections="//@connections.16 //@connections.36"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="302,240" endPoint="302,265" condition="bvar2" constraintsRectangle="252,240,100,25" incomingConnections="//@connections.14 //@connections.15 //@connections.16" outgoingConnections="//@connections.17"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S5" startPoint="302,276" endPoint="302,326" X="false" T="0.0" constraintsRectangle="272,276,60,50" incomingConnections="//@connections.17 //@connections.41" outgoingConnections="//@connections.18 //@connections.19"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="206,348" endPoint="206,373" condition="b3" constraintsRectangle="156,348,100,25" incomingConnections="//@connections.18" outgoingConnections="//@connections.20"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="391,348" endPoint="391,373" condition="b4" constraintsRectangle="341,348,100,25" incomingConnections="//@connections.19" outgoingConnections="//@connections.21 //@connections.41"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S6" startPoint="206,389" endPoint="206,439" X="false" T="0.0" constraintsRectangle="176,389,60,50" incomingConnections="//@connections.20" outgoingConnections="//@connections.22"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S7" startPoint="391,389" endPoint="391,439" X="false" T="0.0" constraintsRectangle="361,389,60,50" incomingConnections="//@connections.21" outgoingConnections="//@connections.23 //@connections.37"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="206,455" endPoint="206,480" condition="b5" constraintsRectangle="156,455,100,25" incomingConnections="//@connections.22" outgoingConnections="//@connections.24"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="391,455" endPoint="391,480" condition="b6" constraintsRectangle="341,455,100,25" incomingConnections="//@connections.23" outgoingConnections="//@connections.25"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S8" startPoint="302,502" endPoint="302,552" X="false" T="0.0" constraintsRectangle="272,502,60,50" incomingConnections="//@connections.24 //@connections.25" outgoingConnections="//@connections.39"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="" startPoint="302,594" endPoint="302,619" condition="b7" constraintsRectangle="252,594,100,25" incomingConnections="//@connections.39" outgoingConnections="//@connections.40"/>
+  <sfcObjects xsi:type="sfcmodel:Action" name="Action_1" startPoint="372,52" qualifier="N" instructionBlock="&lt;...>" indicatorVariable="I1" constraintsRectangle="372,37,180,30" actionType="NameQualifier" incomingConnections="//@connections.35"/>
+  <sfcObjects xsi:type="sfcmodel:Action" name="Action_2" startPoint="461,185" qualifier="R" instructionBlock="  bOut1 := bvar1&amp; S8.X;" indicatorVariable="" constraintsRectangle="461,170,180,60" actionType="NameQualifierIndicatorInstructions" incomingConnections="//@connections.36"/>
+  <sfcObjects xsi:type="sfcmodel:Action" name="Action_3" startPoint="461,414" qualifier="SL" qualifierTime="4.0" instructionBlock="&lt;...>" indicatorVariable="" constraintsRectangle="461,399,180,30" actionType="NameQualifierIndicator" incomingConnections="//@connections.37"/>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@2eba2e9d" userPriorityEnabled="false">
+    <bendpoints>325,42</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@7d7a13a7" userPriorityEnabled="false">
+    <bendpoints>325,269</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@688c1b2a" userPriorityEnabled="false">
+    <bendpoints>325,130</bendpoints>
+    <bendpoints>325,190</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@74b37c02" userPriorityEnabled="false">
+    <bendpoints>325,370</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@b027acf" userPriorityEnabled="false">
+    <bendpoints>325,269</bendpoints>
+    <bendpoints>325,329</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@26c8b723" userPriorityEnabled="false">
+    <bendpoints>473,322</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@2e15ad9b" userPriorityEnabled="false">
+    <bendpoints>262,80</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@41a98737" userPriorityEnabled="false">
+    <bendpoints>295,104</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@596559cf" userPriorityEnabled="false">
+    <bendpoints>295,104</bendpoints>
+    <bendpoints>295,164</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@3a778c6f" userPriorityEnabled="false">
+    <bendpoints>372,52</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.0" transitionOut="//@sfcObjects.1" polylineConnection="org.eclipse.draw2d.PolylineConnection@7a0ba5f0" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.1" stepOut="//@sfcObjects.2" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@6991f512">
+    <bendpoints>302,135</bendpoints>
+    <bendpoints>206,135</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.1" stepOut="//@sfcObjects.3" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@4ea78b91"/>
+  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.1" stepOut="//@sfcObjects.4" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@2bdd6203">
+    <bendpoints>302,135</bendpoints>
+    <bendpoints>391,135</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.2" transitionOut="//@sfcObjects.5" polylineConnection="org.eclipse.draw2d.PolylineConnection@300788d6">
+    <bendpoints>206,225</bendpoints>
+    <bendpoints>302,225</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.3" transitionOut="//@sfcObjects.5" polylineConnection="org.eclipse.draw2d.PolylineConnection@520dc647"/>
+  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.4" transitionOut="//@sfcObjects.5" polylineConnection="org.eclipse.draw2d.PolylineConnection@6ba88a47">
+    <bendpoints>391,225</bendpoints>
+    <bendpoints>302,225</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.5" stepOut="//@sfcObjects.6" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@6fe27001" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.6" transitionOut="//@sfcObjects.7" polylineConnection="org.eclipse.draw2d.PolylineConnection@66997c32" userPriorityEnabled="true" userPriorities="2">
+    <bendpoints>302,337</bendpoints>
+    <bendpoints>206,337</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.6" transitionOut="//@sfcObjects.8" polylineConnection="org.eclipse.draw2d.PolylineConnection@127abbbe" userPriorityEnabled="true" userPriorities="1">
+    <bendpoints>302,337</bendpoints>
+    <bendpoints>391,337</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.7" stepOut="//@sfcObjects.9" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@229762ab" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.8" stepOut="//@sfcObjects.10" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@7f218b0c" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.9" transitionOut="//@sfcObjects.11" polylineConnection="org.eclipse.draw2d.PolylineConnection@fcaf12a" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.10" transitionOut="//@sfcObjects.12" polylineConnection="org.eclipse.draw2d.PolylineConnection@280f0c37" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.11" stepOut="//@sfcObjects.13" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@360c25f" userPriorityEnabled="false">
+    <bendpoints>206,491</bendpoints>
+    <bendpoints>302,491</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.12" stepOut="//@sfcObjects.13" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@24d6355c" userPriorityEnabled="false">
+    <bendpoints>391,491</bendpoints>
+    <bendpoints>302,491</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@390d87cf" userPriorityEnabled="false">
+    <bendpoints>461,185</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@34902fe6" userPriorityEnabled="false">
+    <bendpoints>461,414</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@4748a39a" userPriorityEnabled="false">
+    <bendpoints>391,52</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@41da4be8" userPriorityEnabled="false">
+    <bendpoints>457,185</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@14bc9fe3" userPriorityEnabled="false">
+    <bendpoints>457,185</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@21e67d8d" userPriorityEnabled="false">
+    <bendpoints>457,185</bendpoints>
+    <bendpoints>457,215</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@23b05e58" userPriorityEnabled="false">
+    <bendpoints>372,52</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@3026d4cd" userPriorityEnabled="false">
+    <bendpoints>372,52</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@401516ad" userPriorityEnabled="false">
+    <bendpoints>461,185</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.0" action="//@sfcObjects.15" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@193594ad" userPriorityEnabled="false">
+    <bendpoints>372,52</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.4" action="//@sfcObjects.16" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@4cc7bd09" userPriorityEnabled="false">
+    <bendpoints>461,185</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.10" action="//@sfcObjects.17" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@790e6eae" userPriorityEnabled="false">
+    <bendpoints>461,414</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" connectionType="FromStepToAction" polylineConnection="org.eclipse.draw2d.PolylineConnection@520d0137" userPriorityEnabled="false">
+    <bendpoints>461,185</bendpoints>
+    <bendpoints>461,245</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.13" transitionOut="//@sfcObjects.14" polylineConnection="org.eclipse.draw2d.PolylineConnection@67d8e3b0" userPriorityEnabled="false"/>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.14" stepOut="//@sfcObjects.0" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@b70ad7a" userPriorityEnabled="false">
+    <bendpoints>302,629</bendpoints>
+    <bendpoints>681,629</bendpoints>
+    <bendpoints>681,17</bendpoints>
+    <bendpoints>302,17</bendpoints>
+  </connections>
+  <connections xsi:type="sfcmodel:Selection" transitionIn="//@sfcObjects.8" stepOut="//@sfcObjects.6" connectionType="FromTransitionToStep" polylineConnection="org.eclipse.draw2d.PolylineConnection@57bbf4e5" userPriorityEnabled="false">
+    <bendpoints>391,383</bendpoints>
+    <bendpoints>441,383</bendpoints>
+    <bendpoints>441,266</bendpoints>
+    <bendpoints>302,266</bendpoints>
+  </connections>
+</sfcmodel:SequentialFunctionChart>

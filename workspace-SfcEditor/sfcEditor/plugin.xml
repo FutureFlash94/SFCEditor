@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="sfcEditor.editor.SFCGraphicalEditor"
+            contributorClass="sfcEditor.editor.SFCGraphicalEditorActionBarContributor"
+            default="true"
+            extensions="sfc"
+            id="sfcEditor.editorID"
+            name="Sfc Editor">
+      </editor>
+   </extension>
+
+</plugin>
