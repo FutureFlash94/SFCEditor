@@ -2,6 +2,7 @@ package sfcEditor.editor.command;
 
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.commands.Command;
+
 import sfcmodel.model.Connection;
 
 /**

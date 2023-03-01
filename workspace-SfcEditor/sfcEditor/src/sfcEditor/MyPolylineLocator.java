@@ -8,7 +8,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 /*
  * This class represents a Locator for PolylineConnections.
- * @author: Filip Humaj
+ * @author: Filip Wagner
  */
 public class MyPolylineLocator implements Locator {
 	

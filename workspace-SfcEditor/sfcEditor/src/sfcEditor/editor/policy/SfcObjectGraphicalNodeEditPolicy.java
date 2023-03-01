@@ -4,10 +4,12 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.GraphicalNodeEditPolicy;
 import org.eclipse.gef.requests.CreateConnectionRequest;
 import org.eclipse.gef.requests.ReconnectRequest;
- 
+
 import sfcEditor.editor.command.SelectionCreateCommand;
 import sfcEditor.editor.command.SimultaneousCreateCommand;
-import sfcmodel.model.*;
+import sfcmodel.model.Selection;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Simultaneous;
 
 public class SfcObjectGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	

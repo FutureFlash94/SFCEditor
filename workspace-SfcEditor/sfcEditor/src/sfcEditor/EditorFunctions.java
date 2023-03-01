@@ -2,7 +2,11 @@ package sfcEditor;
 
 import org.eclipse.draw2d.geometry.Rectangle;
 
-import sfcmodel.model.*;
+import sfcmodel.model.Action;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 public class EditorFunctions {
 

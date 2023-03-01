@@ -4,9 +4,9 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.DirectEditPolicy;
 import org.eclipse.gef.requests.DirectEditRequest;
 
-import sfcmodel.model.*;
-import sfcEditor.editor.command.*;
+import sfcEditor.editor.command.StepRenameCommand;
 import sfcEditor.editor.figure.InitialStepFigure;
+import sfcmodel.model.InitialStep;
 
 public class InitialStepDirectEditPolicy extends DirectEditPolicy {
 

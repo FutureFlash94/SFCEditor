@@ -2,7 +2,13 @@ package sfcEditor.editor.command;
 
 import org.eclipse.gef.commands.Command;
 
-import sfcmodel.model.*;
+import sfcmodel.model.Action;
+import sfcmodel.model.ConnectionType;
+import sfcmodel.model.Selection;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
  
 
 public class SelectionDeleteCommand extends Command {

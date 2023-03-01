@@ -4,10 +4,10 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.DirectEditPolicy;
 import org.eclipse.gef.requests.DirectEditRequest;
 
-import sfcmodel.model.*;
 import sfcEditor.ConstantParameters;
-import sfcEditor.editor.command.*;
+import sfcEditor.editor.command.TransitionRenameCommand;
 import sfcEditor.editor.figure.TransitionFigure;
+import sfcmodel.model.Transition;
 
 public class TransitionDirectEditPolicy extends DirectEditPolicy implements ConstantParameters{
 

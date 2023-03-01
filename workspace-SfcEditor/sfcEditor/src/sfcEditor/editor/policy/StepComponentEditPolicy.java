@@ -5,7 +5,7 @@ import org.eclipse.gef.editpolicies.ComponentEditPolicy;
 import org.eclipse.gef.requests.GroupRequest;
 
 import sfcEditor.editor.command.StepDeleteCommand;
-import sfcmodel.model.*;
+import sfcmodel.model.Step;
 
 public class StepComponentEditPolicy extends ComponentEditPolicy {
 	

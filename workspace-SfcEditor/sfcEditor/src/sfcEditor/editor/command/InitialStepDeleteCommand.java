@@ -8,7 +8,14 @@ import java.util.Map;
 import org.eclipse.gef.commands.Command;
 
 import sfcEditor.editor.policy.SequentialFunctionChartXYLayoutPolicy;
-import sfcmodel.model.*;
+import sfcmodel.model.Action;
+import sfcmodel.model.Connection;
+import sfcmodel.model.ConnectionType;
+import sfcmodel.model.InitialStep;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 public final class InitialStepDeleteCommand extends Command {
 	

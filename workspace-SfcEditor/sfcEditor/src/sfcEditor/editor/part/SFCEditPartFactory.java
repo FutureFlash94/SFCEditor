@@ -1,8 +1,15 @@
 package sfcEditor.editor.part;
 
-import sfcmodel.model.*;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
+
+import sfcmodel.model.Action;
+import sfcmodel.model.InitialStep;
+import sfcmodel.model.Selection;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.Simultaneous;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 public class SFCEditPartFactory implements EditPartFactory {
 	

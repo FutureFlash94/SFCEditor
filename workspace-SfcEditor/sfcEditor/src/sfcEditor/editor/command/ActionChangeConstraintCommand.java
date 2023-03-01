@@ -1,14 +1,13 @@
 package sfcEditor.editor.command;
 
-import sfcmodel.model.Action;
-import sfcmodel.model.ActionType;
-
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.commands.Command;
 
 import sfcEditor.BendpointFunctions;
 import sfcEditor.ConstantParameters;
+import sfcmodel.model.Action;
+import sfcmodel.model.ActionType;
 
 public class ActionChangeConstraintCommand extends Command implements ConstantParameters {
 	private Action action;

@@ -7,7 +7,12 @@ import java.util.Map;
 
 import org.eclipse.gef.commands.Command;
 
-import sfcmodel.model.*;
+import sfcmodel.model.Connection;
+import sfcmodel.model.ConnectionType;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 public class TransitionDeleteCommand extends Command {
 	

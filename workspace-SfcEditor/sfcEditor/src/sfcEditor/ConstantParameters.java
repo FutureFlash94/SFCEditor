@@ -1,10 +1,8 @@
 package sfcEditor;
 
-import java.lang.Boolean;
-
 /*
  * This class contains useful constants for the SFC Editor
- * @author: Filip Humaj
+ * @author: Filip Wagner
  */
 public interface ConstantParameters {
 	// Step parameters 

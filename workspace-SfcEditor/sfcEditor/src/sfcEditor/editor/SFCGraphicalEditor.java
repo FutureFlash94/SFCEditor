@@ -2,7 +2,7 @@ package sfcEditor.editor;
 
 import java.io.IOException;
 import java.util.EventObject;
- 
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
@@ -33,14 +33,15 @@ import org.eclipse.ui.views.properties.IPropertySource;
 import org.eclipse.ui.views.properties.IPropertySourceProvider;
 import org.eclipse.ui.views.properties.PropertySheetPage;
 
-import sfcmodel.model.*;
-import sfcmodel.model.provider.SFCItemProviderAdapterFactory;
+import sfcEditor.action.ShowNameAction;
 import sfcEditor.action.ShowNameQualifierAction;
 import sfcEditor.action.ShowNameQualifierIndicatorAction;
 import sfcEditor.action.ShowNameQualifierIndicatorInstructionsAction;
-import sfcEditor.action.ShowNameAction;
 import sfcEditor.action.ToggleUserPriorityAction;
 import sfcEditor.editor.part.SFCEditPartFactory;
+import sfcmodel.model.SFCPackage;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.provider.SFCItemProviderAdapterFactory;
 
 public class SFCGraphicalEditor extends GraphicalEditorWithFlyoutPalette {
 

@@ -2,7 +2,7 @@ package sfcEditor.editor.command;
 
 import org.eclipse.gef.commands.Command;
 
-import sfcmodel.model.*;
+import sfcmodel.model.InitialStep;
 
 public class InitialStepRenameCommand extends Command {
 	private String oldName, newName;

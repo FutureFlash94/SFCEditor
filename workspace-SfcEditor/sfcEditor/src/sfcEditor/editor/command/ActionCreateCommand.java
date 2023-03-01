@@ -3,14 +3,19 @@ package sfcEditor.editor.command;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.CreateConnectionRequest;
 
-import sfcmodel.model.*;
 import sfcEditor.BendpointFunctions;
 import sfcEditor.ConstantParameters;
 import sfcEditor.editor.factory.SelectionFactory;
+import sfcmodel.model.Action;
+import sfcmodel.model.ActionType;
+import sfcmodel.model.Qualifiers;
+import sfcmodel.model.Selection;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Step;
 
 public class ActionCreateCommand extends Command implements ConstantParameters {
 	private static final Dimension defaultDimension = 

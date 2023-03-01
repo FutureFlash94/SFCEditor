@@ -3,13 +3,13 @@ package sfcEditor.editor.command;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
-
 import org.eclipse.gef.commands.Command;
- 
-import sfcmodel.model.*;
+
 import sfcEditor.BendpointFunctions;
 import sfcEditor.ConstantParameters;
 import sfcEditor.editor.policy.SequentialFunctionChartXYLayoutPolicy;
+import sfcmodel.model.InitialStep;
+import sfcmodel.model.SequentialFunctionChart;
 
 public class InitialStepCreateCommand extends Command implements ConstantParameters {
 	private static final Dimension defaultDimension = 

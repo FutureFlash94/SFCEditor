@@ -6,9 +6,20 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 
-import sfcmodel.model.*;
-import sfcEditor.editor.command.*;
 import sfcEditor.ConstantParameters;
+import sfcEditor.editor.command.ActionChangeConstraintCommand;
+import sfcEditor.editor.command.ActionCreateCommand;
+import sfcEditor.editor.command.InitialStepChangeConstraintCommand;
+import sfcEditor.editor.command.InitialStepCreateCommand;
+import sfcEditor.editor.command.StepChangeConstraintCommand;
+import sfcEditor.editor.command.StepCreateCommand;
+import sfcEditor.editor.command.TransitionChangeConstraintCommand;
+import sfcEditor.editor.command.TransitionCreateCommand;
+import sfcmodel.model.Action;
+import sfcmodel.model.InitialStep;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 public class SequentialFunctionChartXYLayoutPolicy extends XYLayoutEditPolicy {
 

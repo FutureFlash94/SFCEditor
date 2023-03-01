@@ -2,7 +2,8 @@ package sfcEditor.editor.factory;
 
 import org.eclipse.gef.requests.CreationFactory;
 
-import sfcmodel.model.*;
+import sfcmodel.model.SFCFactory;
+import sfcmodel.model.Transition;
 
 public class TransitionFactory implements CreationFactory {
 

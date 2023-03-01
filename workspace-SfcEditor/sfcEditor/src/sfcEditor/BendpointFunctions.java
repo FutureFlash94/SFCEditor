@@ -7,14 +7,20 @@ import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 
-import sfcmodel.model.*;
+import sfcmodel.model.Action;
+import sfcmodel.model.Connection;
+import sfcmodel.model.ConnectionType;
+import sfcmodel.model.InitialStep;
+import sfcmodel.model.Selection;
+import sfcmodel.model.Simultaneous;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 /*
  * This class help you to move all bendpoints, actions and simultaneous lines to the right position.
- * @author: Filip Humaj
+ * @author: Filip Wagner
  */
 public class BendpointFunctions extends EditorFunctions implements ConstantParameters {
 	

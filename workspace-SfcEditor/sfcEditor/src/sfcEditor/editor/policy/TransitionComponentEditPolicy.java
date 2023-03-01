@@ -4,8 +4,8 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.ComponentEditPolicy;
 import org.eclipse.gef.requests.GroupRequest;
 
-import sfcmodel.model.*;
 import sfcEditor.editor.command.TransitionDeleteCommand;
+import sfcmodel.model.Transition;
 
 public class TransitionComponentEditPolicy extends ComponentEditPolicy {
 	

@@ -1,9 +1,9 @@
 package sfcEditor.editor;
 
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.ConnectionCreationToolEntry;
 import org.eclipse.gef.palette.CreationToolEntry;
-import org.eclipse.gef.palette.CombinedTemplateCreationEntry;
 import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.PaletteToolbar;
@@ -13,7 +13,12 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.osgi.framework.Bundle;
 
 import sfcEditor.Activator;
-import sfcEditor.editor.factory.*;
+import sfcEditor.editor.factory.ActionFactory;
+import sfcEditor.editor.factory.InitialStepFactory;
+import sfcEditor.editor.factory.SelectionFactory;
+import sfcEditor.editor.factory.SimultaneousFactory;
+import sfcEditor.editor.factory.StepFactory;
+import sfcEditor.editor.factory.TransitionFactory;
 import sfcEditor.editor.tool.CreationAndDirectEditTool;
 
 public class SFCGraphicalEditorPalette extends PaletteRoot {

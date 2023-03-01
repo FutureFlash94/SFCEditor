@@ -22,9 +22,13 @@ import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
 import org.eclipse.jface.viewers.TextCellEditor;
 
-import sfcmodel.model.*;
 import sfcEditor.editor.figure.InitialStepFigure;
-import sfcEditor.editor.policy.*;
+import sfcEditor.editor.policy.InitialStepComponentEditPolicy;
+import sfcEditor.editor.policy.InitialStepDirectEditPolicy;
+import sfcEditor.editor.policy.SequentialFunctionChartXYLayoutPolicy;
+import sfcEditor.editor.policy.SfcObjectGraphicalNodeEditPolicy;
+import sfcmodel.model.Connection;
+import sfcmodel.model.InitialStep;
 
 public class InitialStepEditPart extends AbstractGraphicalEditPart implements NodeEditPart {
 	

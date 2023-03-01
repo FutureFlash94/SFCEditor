@@ -1,13 +1,12 @@
 package sfcEditor.editor.command;
 
-import sfcmodel.model.Step;
-
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.commands.Command;
 
 import sfcEditor.BendpointFunctions;
 import sfcEditor.ConstantParameters;
+import sfcmodel.model.Step;
 
 public class StepChangeConstraintCommand extends Command implements ConstantParameters {
 	private Step step;

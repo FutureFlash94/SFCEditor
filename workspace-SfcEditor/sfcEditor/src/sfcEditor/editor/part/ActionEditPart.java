@@ -20,9 +20,13 @@ import org.eclipse.gef.SnapToHelper;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
 
-import sfcmodel.model.*;
 import sfcEditor.editor.figure.ActionFigure;
-import sfcEditor.editor.policy.*;
+import sfcEditor.editor.policy.ActionComponentEditPolicy;
+import sfcEditor.editor.policy.SfcObjectGraphicalNodeEditPolicy;
+import sfcmodel.model.Action;
+import sfcmodel.model.ActionType;
+import sfcmodel.model.Connection;
+import sfcmodel.model.Qualifiers;
 
 public class ActionEditPart extends AbstractGraphicalEditPart implements NodeEditPart {
 	

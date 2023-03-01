@@ -2,6 +2,7 @@ package sfcEditor.editor.part;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.draw2d.FreeformLayer;
 import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
@@ -17,8 +18,9 @@ import org.eclipse.gef.SnapToHelper;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
 
-import sfcmodel.model.*;
-import sfcEditor.editor.policy.*;
+import sfcEditor.editor.policy.SequentialFunctionChartXYLayoutPolicy;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
 
 public class SequentialFunctionChartEditPart extends AbstractGraphicalEditPart {
 	

@@ -8,10 +8,10 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.ui.actions.ActionFactory;
 
+import sfcEditor.action.ShowNameAction;
 import sfcEditor.action.ShowNameQualifierAction;
 import sfcEditor.action.ShowNameQualifierIndicatorAction;
 import sfcEditor.action.ShowNameQualifierIndicatorInstructionsAction;
-import sfcEditor.action.ShowNameAction;
 import sfcEditor.action.ToggleUserPriorityAction;
 
 public class SFCGraphicalEditorContextMenuProvider extends ContextMenuProvider {

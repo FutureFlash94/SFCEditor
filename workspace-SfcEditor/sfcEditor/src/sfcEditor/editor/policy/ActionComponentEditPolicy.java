@@ -5,14 +5,15 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.ComponentEditPolicy;
 import org.eclipse.gef.requests.GroupRequest;
 
+import sfcEditor.action.ShowNameAction;
 import sfcEditor.action.ShowNameQualifierAction;
 import sfcEditor.action.ShowNameQualifierIndicatorAction;
 import sfcEditor.action.ShowNameQualifierIndicatorInstructionsAction;
-import sfcEditor.action.ShowNameAction;
 import sfcEditor.editor.command.ActionChangeConstraintCommand;
 import sfcEditor.editor.command.ActionDeleteCommand;
 import sfcEditor.editor.part.ActionEditPart;
-import sfcmodel.model.*;
+import sfcmodel.model.Action;
+import sfcmodel.model.ActionType;
 
 public class ActionComponentEditPolicy extends ComponentEditPolicy {
 	

@@ -1,10 +1,12 @@
 package sfcEditor.action;
 
 import java.util.List;
+
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.ui.actions.SelectionAction;
 import org.eclipse.ui.IWorkbenchPart;
+
 import sfcEditor.editor.part.SelectionEditPart;
 
 public class ToggleUserPriorityAction extends SelectionAction {

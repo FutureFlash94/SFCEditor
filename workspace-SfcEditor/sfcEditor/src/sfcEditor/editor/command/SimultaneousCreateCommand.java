@@ -3,9 +3,14 @@ package sfcEditor.editor.command;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.commands.Command;
 
-import sfcEditor.ConstantParameters;
 import sfcEditor.BendpointFunctions;
-import sfcmodel.model.*;
+import sfcEditor.ConstantParameters;
+import sfcmodel.model.ConnectionType;
+import sfcmodel.model.SequentialFunctionChart;
+import sfcmodel.model.SfcObject;
+import sfcmodel.model.Simultaneous;
+import sfcmodel.model.Step;
+import sfcmodel.model.Transition;
 
 public class SimultaneousCreateCommand extends Command implements ConstantParameters  {
 	private Step stepIn;

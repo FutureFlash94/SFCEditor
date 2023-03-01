@@ -3,7 +3,7 @@ package sfcEditor.editor.command;
 import org.eclipse.gef.commands.Command;
 
 import sfcEditor.ConstantParameters;
-import sfcmodel.model.*;
+import sfcmodel.model.Transition;
 
 public class TransitionRenameCommand extends Command implements ConstantParameters{
 	private String oldName, newName;

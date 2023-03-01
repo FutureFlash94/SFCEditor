@@ -1,18 +1,17 @@
 package sfcEditor.editor.part;
 
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.PolylineConnection;
-import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.Notifier;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.draw2d.AbsoluteBendpoint;
 import org.eclipse.draw2d.BendpointConnectionRouter;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PolylineConnection;
+import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.editpolicies.ConnectionEndpointEditPolicy;
