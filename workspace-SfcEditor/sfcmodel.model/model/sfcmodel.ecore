@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sfcmodel" nsURI="www.tuwien.ac.at/e1425203/SfcEditor" nsPrefix="sfcmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="SequentialFunctionChart">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sfcObjects" upperBound="-1"
+        eType="#//SfcObject" containment="true" eOpposite="#//SfcObject/sfc"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
+        eType="#//Connection" containment="true" eOpposite="#//Connection/sfc"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SfcObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startPoint" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endPoint" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sfc" eType="#//SequentialFunctionChart"
+        eOpposite="#//SequentialFunctionChart/sfcObjects"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialStep" eSuperTypes="#//Step"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//SfcObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="X" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="T" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintsRectangle" eType="#//Rectangle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnections" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/stepOut"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnections" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/stepIn"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//SfcObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" ordered="false"
+        eType="#//Qualifiers"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifierTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instructionBlock" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="indicatorVariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintsRectangle" eType="#//Rectangle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionType" eType="#//ActionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnections" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//SfcObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintsRectangle" eType="#//Rectangle"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingConnections" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/transitionOut"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingConnections" upperBound="-1"
+        eType="#//Connection" eOpposite="#//Connection/transitionIn"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stepIn" eType="#//Step"
+        eOpposite="#//Step/outgoingConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionIn" eType="#//Transition"
+        eOpposite="#//Transition/outgoingConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stepOut" eType="#//Step"
+        eOpposite="#//Step/incomingConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionOut" eType="#//Transition"
+        eOpposite="#//Transition/incomingConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+        eOpposite="#//Action/incomingConnections"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionType" eType="#//ConnectionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="polylineConnection" eType="#//PolylineConnection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bendpoints" upperBound="-1"
+        eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sfc" eType="#//SequentialFunctionChart"
+        eOpposite="#//SequentialFunctionChart/connections"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Selection" eSuperTypes="#//Connection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userPriorityEnabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userPriorities" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Simultaneous" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Qualifiers">
+    <eLiterals name="None" literal="None"/>
+    <eLiterals name="N" value="1"/>
+    <eLiterals name="R" value="2"/>
+    <eLiterals name="S" value="3"/>
+    <eLiterals name="L" value="4"/>
+    <eLiterals name="D" value="5"/>
+    <eLiterals name="P" value="6"/>
+    <eLiterals name="SD" value="7"/>
+    <eLiterals name="DS" value="8"/>
+    <eLiterals name="SL" value="9"/>
+    <eLiterals name="P1" value="10"/>
+    <eLiterals name="P0" value="11"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectionType">
+    <eLiterals name="FromStepToTransition"/>
+    <eLiterals name="FromTransitionToStep" value="1"/>
+    <eLiterals name="FromStepToAction" value="2" literal="FromStepToAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActionType">
+    <eLiterals name="Name" literal="Name"/>
+    <eLiterals name="NameQualifier" value="1" literal="NameQualifier"/>
+    <eLiterals name="NameQualifierIndicator" value="2" literal="NameQualifierIndicator"/>
+    <eLiterals name="NameQualifierIndicatorInstructions" value="3" literal="NameQualifierIndicatorInstructions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Rectangle" instanceClassName="org.eclipse.draw2d.geometry.Rectangle"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Point" instanceClassName="org.eclipse.draw2d.geometry.Point"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PolylineConnection" instanceClassName="org.eclipse.draw2d.PolylineConnection"/>
+</ecore:EPackage>

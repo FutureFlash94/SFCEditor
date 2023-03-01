@@ -90,7 +90,6 @@ public class SFCGraphicalEditor extends GraphicalEditorWithFlyoutPalette {
 		    	sfcResource.load(null);
 		    	sfc = (SequentialFunctionChart) sfcResource.getContents().get(0);
 		    } catch(IOException e) {
-		    	// TODO do something smarter.
 		    	e.printStackTrace();
 		    	sfcResource = null;
 		    }
@@ -116,7 +115,6 @@ public class SFCGraphicalEditor extends GraphicalEditorWithFlyoutPalette {
 			sfcResource.save(null);
             getCommandStack().markSaveLocation();    
 		} catch (IOException e) {
-	        // TODO do something smarter.
 	        e.printStackTrace();
 	    }
 	}
@@ -132,7 +130,7 @@ public class SFCGraphicalEditor extends GraphicalEditorWithFlyoutPalette {
     } 
 	
 	/**
-     * This methos implements adapting to {@link IPropertySheetPage}. All other requests are
+     * This method implements adapting to {@link IPropertySheetPage}. All other requests are
      * forwarded to the {@link GraphicalEditorWithFlyoutPalette#getAdapter(Class) parent}
      * implementation.
      */

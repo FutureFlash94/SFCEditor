@@ -4,4 +4,5 @@
 *.classpath
 *.metadata/
 *.settings/
-workspace-SfcEditor/sfcmodel.model/
+workspace-SfcEditor/sfcEditor/bin/
+workspace-SfcEditor/sfcmodel.model/bin/

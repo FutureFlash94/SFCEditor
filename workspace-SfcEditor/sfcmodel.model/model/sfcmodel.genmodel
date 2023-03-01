@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/sfcmodel.model/src" editDirectory="/sfcmodel.model.edit/src"
+    editorDirectory="/sfcmodel.model.editor/src" modelPluginID="sfcmodel.model" modelName="SFC"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/sfcmodel.model.tests/src"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0" copyrightFields="false"
+    editPluginID="sfcmodel.model.edit" testsPluginID="sfcmodel.model.tests" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>sfcmodel.ecore</foreignModel>
+  <genPackages prefix="SFC" disposableProviderFactory="true" interfacePackageSuffix="model"
+      metaDataPackageSuffix="model" classPackageSuffix="model.impl" utilityPackageSuffix="model.util"
+      providerPackageSuffix="model.provider" presentationPackageSuffix="model.presentation"
+      testsPackageSuffix="model.tests" ecorePackage="sfcmodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sfcmodel.ecore#//Qualifiers">
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/None"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/N"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/R"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/S"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/L"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/D"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/P"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/SD"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/DS"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/SL"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/P1"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//Qualifiers/P0"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sfcmodel.ecore#//ConnectionType">
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ConnectionType/FromStepToTransition"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ConnectionType/FromTransitionToStep"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ConnectionType/FromStepToAction"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sfcmodel.ecore#//ActionType">
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ActionType/Name"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ActionType/NameQualifier"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ActionType/NameQualifierIndicator"/>
+      <genEnumLiterals ecoreEnumLiteral="sfcmodel.ecore#//ActionType/NameQualifierIndicatorInstructions"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="sfcmodel.ecore#//Rectangle"/>
+    <genDataTypes ecoreDataType="sfcmodel.ecore#//Point"/>
+    <genDataTypes ecoreDataType="sfcmodel.ecore#//PolylineConnection"/>
+    <genClasses ecoreClass="sfcmodel.ecore#//SequentialFunctionChart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//SequentialFunctionChart/sfcObjects"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//SequentialFunctionChart/connections"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//SfcObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//SfcObject/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//SfcObject/startPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//SfcObject/endPoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//SfcObject/sfc"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//InitialStep"/>
+    <genClasses ecoreClass="sfcmodel.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Step/X"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Step/T"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Step/constraintsRectangle"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Step/incomingConnections"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Step/outgoingConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Action/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Action/qualifierTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Action/instructionBlock"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Action/indicatorVariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Action/constraintsRectangle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Action/actionType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Action/incomingConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Transition/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Transition/constraintsRectangle"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Transition/incomingConnections"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Transition/outgoingConnections"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//Connection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Connection/stepIn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Connection/transitionIn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Connection/stepOut"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Connection/transitionOut"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Connection/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Connection/connectionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Connection/polylineConnection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Connection/bendpoints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sfcmodel.ecore#//Connection/sfc"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//Selection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Selection/userPriorityEnabled"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sfcmodel.ecore#//Selection/userPriorities"/>
+    </genClasses>
+    <genClasses ecoreClass="sfcmodel.ecore#//Simultaneous"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -7,6 +7,7 @@ import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 
 import sfcmodel.model.*;
@@ -267,8 +268,9 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 		
 		for(int i=0; i<=num; i++) {
 			MyPolylineLocator loc;
-			IFigure simultaneousLine = 
-					new ImageFigure(ImageDescriptor.createFromURL(bundle.getEntry(path)).createImage());
+			ImageDescriptor imageDescriptor = ImageDescriptor.createFromURL(bundle.getEntry(path));
+			IFigure simultaneousLine =  new ImageFigure(imageDescriptor.createImage());
+			
 			if(i!=num) {
 				// x1+(i+1)*imgSizeX < x2 prevent additionally drawing overhanging lines
 				if(x1 < x2 && x1+(i+1)*imgSizeX < x2) {
@@ -334,10 +336,12 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 	    		if(con1 instanceof Simultaneous && con1.getTransitionIn() != null) {
 		    		for(Connection con: con1.getTransitionIn().getOutgoingConnections()) {
 		    			// Delete all added figures of the connection
-		    			con.getPolylineConnection().removeAll();
-			    		if(con.getBendpoints().size() == 2) {
-			    			setImageToCon(con, "icons/simultaneousLine.png");
-			    		}
+		    			if (con.getPolylineConnection() != null) {
+		    				con.getPolylineConnection().removeAll();
+				    		if(con.getBendpoints().size() == 2) {
+				    			setImageToCon(con, "icons/simultaneousLine.png");
+				    		}
+	    				}
 		    		}
 	    		}
 	    	}
@@ -345,10 +349,12 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 	    		if(con1 instanceof Simultaneous && con1.getTransitionIn() != null) {
 		    		for(Connection con: con1.getTransitionOut().getIncomingConnections()) {
 		    			// Delete all added figures of the connection
-		    			con.getPolylineConnection().removeAll();
-			    		if(con.getBendpoints().size() == 2) {
-			    			setImageToCon(con, "icons/simultaneousLine.png");
-			    		}
+		    			if (con.getPolylineConnection() != null) {
+		    				con.getPolylineConnection().removeAll();
+				    		if(con.getBendpoints().size() == 2) {
+				    			setImageToCon(con, "icons/simultaneousLine.png");
+				    		}
+	    				}
 		    		}
 	    		}
 	    	}
@@ -362,10 +368,12 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 	    		if(con1 instanceof Simultaneous && con1.getStepIn() != null) {
 		    		for(Connection con: con1.getStepIn().getOutgoingConnections()) {
 		    			// Delete all added figures of the connection
-		    			con.getPolylineConnection().removeAll();
-			    		if(con.getBendpoints().size() == 2) {
-			    			setImageToCon(con, "icons/simultaneousLine.png");
-			    		}
+		    			if (con.getPolylineConnection() != null) {
+		    				con.getPolylineConnection().removeAll();
+				    		if(con.getBendpoints().size() == 2) {
+				    			setImageToCon(con, "icons/simultaneousLine.png");
+				    		}
+	    				}
 		    		}
 	    		}
 	    	}
@@ -374,9 +382,11 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 	    		if(con1 instanceof Simultaneous && con1.getStepOut() != null) {
 	    			for(Connection con: con1.getStepOut().getIncomingConnections()) {
 	    				// Delete all added figures of the connection
-	    				con.getPolylineConnection().removeAll();
-	    				if(con.getBendpoints().size() == 2) {
-	    					setImageToCon(con, "icons/simultaneousLine.png");
+	    				if (con.getPolylineConnection() != null) {
+		    				con.getPolylineConnection().removeAll();
+		    				if(con.getBendpoints().size() == 2) {
+		    					setImageToCon(con, "icons/simultaneousLine.png");
+		    				}
 	    				}
 	    			}
 	    		}

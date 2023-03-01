@@ -54,6 +54,8 @@ public class ActionChangeConstraintCommand extends Command implements ConstantPa
   	}
   	
   	public void setModel(Action action) {
+  		this.action = action;
+
   		// if action type changed, change constraint height/width
   		if(this.actionType != action.getActionType()) {
 			this.newConstraintRectangle = action.getConstraintsRectangle();
