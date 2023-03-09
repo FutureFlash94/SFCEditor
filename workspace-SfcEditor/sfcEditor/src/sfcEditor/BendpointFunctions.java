@@ -2,13 +2,11 @@ package sfcEditor;
 
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.draw2d.ConnectionEndpointLocator;
-import org.eclipse.draw2d.IFigure;
-import org.eclipse.draw2d.ImageFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.geometry.Point;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.osgi.framework.Bundle;
 
+import sfcEditor.editor.figure.SimultaneousPolylineConnection;
 import sfcmodel.model.Action;
 import sfcmodel.model.Connection;
 import sfcmodel.model.ConnectionType;
@@ -44,7 +42,6 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
   			if(s.getEndPoint().x != t.getStartPoint().x) {
 		    	refreshConnectionBendpoint(con, bendpoint1Index, s.getEndPoint().x, s.getEndPoint().y+(t.getStartPoint().y-s.getEndPoint().y)/2);
 		    	refreshConnectionBendpoint(con, bendpoint2Index, t.getStartPoint().x, s.getEndPoint().y+(t.getStartPoint().y-s.getEndPoint().y)/2);
-    	
   			}
   		}	
   		// case: step is above transition
@@ -128,7 +125,7 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
   	// other connections to create a vertical line for all connections
   	private static void refreshOtherBendpoints(Step s) {
   		// move all incoming connections to a horizontal line
-    	int ymin = -1; // get yvalue of highest bendpoint
+    	int ymin = -1; // get y-value of highest bendpoint
     	for(Connection connFromTransitionToStep: s.getIncomingConnections()) {
     		if(connFromTransitionToStep.getConnectionType() == ConnectionType.FROM_TRANSITION_TO_STEP) {
     			for(Connection connFromTransitionToStep2: connFromTransitionToStep.getTransitionIn().getOutgoingConnections()) {
@@ -159,7 +156,7 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
     	}
     	
     	// move all outgoing connections to a horizontal line
-    	int ymax = -1;	// get yvalue of lowest bendpoint
+    	int ymax = -1;	// get y-value of lowest bendpoint
     	for(Connection connFromStepToTransition: s.getOutgoingConnections()) {
     		if(connFromStepToTransition.getConnectionType() == ConnectionType.FROM_STEP_TO_TRANSITION) {
     			for(Connection connFromStepToTransition2: connFromStepToTransition.getTransitionOut().getIncomingConnections()) {	
@@ -193,7 +190,7 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
   	// Move other bendpoints to create a vertical line for all connections
   	private static void refreshOtherBendpoints(Transition t) {
   		// move all incoming connections to a horizontal line
-    	// get yvalue of highest bendpoint
+    	// get y-value of highest bendpoint
     	int ymin = -1;
     	for(Connection connFromStepToTransition: t.getIncomingConnections()) {
     		if(connFromStepToTransition.getConnectionType() == ConnectionType.FROM_STEP_TO_TRANSITION) {
@@ -225,7 +222,7 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 		}
     	
     	// move all outgoing connections to a horizontal line
-    	// get yvalue of lowest bendpoint
+    	// get y-value of lowest bendpoint
     	int ymax = -1;
     	for(Connection connFromTransitionToStepFrom: t.getOutgoingConnections()) {
     		if(connFromTransitionToStepFrom.getConnectionType() == ConnectionType.FROM_TRANSITION_TO_STEP) {
@@ -256,50 +253,13 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
     		}
     	}
   	}
-
-  	// Add images to a connection between bendpoint1 & bendpoint2
-	private static void setImageToCon(Connection conn, String path) {
+  	
+	private static void setPolylineConnection(Connection conn) {
   		int x1 = conn.getBendpoints().get(bendpoint1Index).x;
   		int x2 = conn.getBendpoints().get(bendpoint2Index).x;
   		int y = conn.getBendpoints().get(bendpoint1Index).y;
   		
-  		int imgSizeX = 25;
-  		int imgSizeY = 5;
-  		
-  		long length = Math.abs(x1-x2);
-		long num = Math.round(length/imgSizeX)+1;
-		
-		// Delete all added figures of the connection
-		conn.getPolylineConnection().removeAll();
-		
-		for(int i=0; i<=num; i++) {
-			MyPolylineLocator loc;
-			ImageDescriptor imageDescriptor = ImageDescriptor.createFromURL(bundle.getEntry(path));
-			IFigure simultaneousLine =  new ImageFigure(imageDescriptor.createImage());
-			
-			if(i!=num) {
-				// x1+(i+1)*imgSizeX < x2 prevent additionally drawing overhanging lines
-				if(x1 < x2 && x1+(i+1)*imgSizeX < x2) {
-					loc = new MyPolylineLocator(simultaneousLine, x1+i*imgSizeX, y-imgSizeY/2);
-				}
-				else if(x2 < x1 && x2+(i+1)*imgSizeX < x1) {
-					loc = new MyPolylineLocator(simultaneousLine, x2+i*imgSizeX, y-imgSizeY/2);
-				}
-				else {
-					continue;
-				}
-			}
-			// prevent additionally drawing overhanging lines
-			else {
-				if(x1 < x2) {
-					loc = new MyPolylineLocator(simultaneousLine, x2-imgSizeX, y-imgSizeY/2);
-				}
-				else {
-					loc = new MyPolylineLocator(simultaneousLine, x1-imgSizeX, y-imgSizeY/2);
-				}
-			}	
-			conn.getPolylineConnection().add(simultaneousLine, loc);
-		}
+  		((SimultaneousPolylineConnection)conn.getPolylineConnection()).addSimulatnousLine(x1, x2, y);
   	}
 
 	// Add/Remove User priority numbers for selection connection
@@ -335,17 +295,14 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 		}
 	}
 	
-  	// Draw simultaneous lines to incoming and outgoing simultaneous connections
   	public static void refreshSimultaneousLines(Step s) {
   		if(s != null) {
 	  		for(Connection con1: s.getIncomingConnections()) {
 	    		if(con1 instanceof Simultaneous && con1.getTransitionIn() != null) {
 		    		for(Connection con: con1.getTransitionIn().getOutgoingConnections()) {
-		    			// Delete all added figures of the connection
 		    			if (con.getPolylineConnection() != null) {
-		    				con.getPolylineConnection().removeAll();
 				    		if(con.getBendpoints().size() == 2) {
-				    			setImageToCon(con, "icons/simultaneousLine.png");
+				    			setPolylineConnection(con);
 				    		}
 	    				}
 		    		}
@@ -354,11 +311,9 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 	  		for(Connection con1: s.getOutgoingConnections()) {
 	    		if(con1 instanceof Simultaneous && con1.getTransitionIn() != null) {
 		    		for(Connection con: con1.getTransitionOut().getIncomingConnections()) {
-		    			// Delete all added figures of the connection
 		    			if (con.getPolylineConnection() != null) {
-		    				con.getPolylineConnection().removeAll();
 				    		if(con.getBendpoints().size() == 2) {
-				    			setImageToCon(con, "icons/simultaneousLine.png");
+				    			setPolylineConnection(con);
 				    		}
 	    				}
 		    		}
@@ -367,17 +322,14 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
   		}
   	}
   	
-  	// Draw simultaneous lines to incoming and outgoing simultaneous connections
   	public static void refreshSimultaneousLines(Transition t) {
   		if(t != null) {
 	    	for(Connection con1: t.getIncomingConnections()) {
 	    		if(con1 instanceof Simultaneous && con1.getStepIn() != null) {
 		    		for(Connection con: con1.getStepIn().getOutgoingConnections()) {
-		    			// Delete all added figures of the connection
 		    			if (con.getPolylineConnection() != null) {
-		    				con.getPolylineConnection().removeAll();
 				    		if(con.getBendpoints().size() == 2) {
-				    			setImageToCon(con, "icons/simultaneousLine.png");
+				    			setPolylineConnection(con);
 				    		}
 	    				}
 		    		}
@@ -387,16 +339,13 @@ public class BendpointFunctions extends EditorFunctions implements ConstantParam
 	    	for(Connection con1: t.getOutgoingConnections()) {
 	    		if(con1 instanceof Simultaneous && con1.getStepOut() != null) {
 	    			for(Connection con: con1.getStepOut().getIncomingConnections()) {
-	    				// Delete all added figures of the connection
 	    				if (con.getPolylineConnection() != null) {
-		    				con.getPolylineConnection().removeAll();
 		    				if(con.getBendpoints().size() == 2) {
-		    					setImageToCon(con, "icons/simultaneousLine.png");
+		    					setPolylineConnection(con);
 		    				}
 	    				}
 	    			}
 	    		}
-		    		
 	    	}
   		}
   	}

@@ -17,6 +17,7 @@ import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gef.editpolicies.ConnectionEndpointEditPolicy;
 
 import sfcEditor.BendpointFunctions;
+import sfcEditor.editor.figure.SimultaneousPolylineConnection;
 import sfcEditor.editor.policy.ConnectionBendpointEditPolicy;
 import sfcEditor.editor.policy.SimultaneousConnectionEditPolicy;
 import sfcmodel.model.ConnectionType;
@@ -25,7 +26,7 @@ import sfcmodel.model.Simultaneous;
 public class SimultaneousEditPart extends AbstractConnectionEditPart {
 
 	private SimultaneousAdapter adapter;
-	private PolylineConnection conn;
+	private SimultaneousPolylineConnection conn;
 	
 	public SimultaneousEditPart() {
 		super();
@@ -41,23 +42,19 @@ public class SimultaneousEditPart extends AbstractConnectionEditPart {
 
 	@Override 
 	protected IFigure createFigure() {
-		this.conn = new PolylineConnection();
-		this.conn.setConnectionRouter(new BendpointConnectionRouter());
+		this.conn = new SimultaneousPolylineConnection();
 		((Simultaneous)getModel()).setPolylineConnection(this.conn);
 		return this.conn;
 	}
 	
 	@Override
 	protected void refreshVisuals() {
-	    Connection connection = getConnectionFigure();
-	    Simultaneous line = ((Simultaneous)getModel());
-	    List<Point> modelConstraint = (line.getBendpoints());
+		Simultaneous line = ((Simultaneous)getModel());
 	    List<AbsoluteBendpoint> figureConstraint = new ArrayList<AbsoluteBendpoint>();
-	    
-	    for (Point p : modelConstraint) {
+	    for (Point p : line.getBendpoints()) {
 	    	figureConstraint.add(new AbsoluteBendpoint(p));
 	    }
-	    connection.setRoutingConstraint(figureConstraint);
+	    getConnectionFigure().setRoutingConstraint(figureConstraint);
 	    
 	    // Create simultaneous lines
 	    if(line.getConnectionType() == ConnectionType.FROM_STEP_TO_TRANSITION) {
