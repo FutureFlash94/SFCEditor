@@ -7,10 +7,6 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 import sfcEditor.editor.figure.SimultaneousPolylineConnection;
 
-/*
- * This class represents a Locator for PolylineConnections.
- * @author: Filip Wagner
- */
 public class SimultaneousPolylineConnectionLocator implements Locator {
 	
 	private SimultaneousPolylineConnection connection;
