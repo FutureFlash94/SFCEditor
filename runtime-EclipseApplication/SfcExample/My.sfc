@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sfcmodel:SequentialFunctionChart xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sfcmodel="www.tuwien.ac.at/e1425203/SfcEditor">
   <sfcObjects xsi:type="sfcmodel:InitialStep" name="S1" startPoint="319,37" endPoint="319,87" X="true" T="0.0" constraintsRectangle="289,37,60,50" outgoingConnections="//@connections.0"/>
-  <sfcObjects xsi:type="sfcmodel:Step" name="S1" startPoint="391,198" endPoint="391,248" X="false" T="0.0" constraintsRectangle="361,198,60,50" incomingConnections="//@connections.1" outgoingConnections="//@connections.4"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S3" startPoint="391,191" endPoint="391,241" X="false" T="0.0" constraintsRectangle="361,191,60,50" incomingConnections="//@connections.1" outgoingConnections="//@connections.4"/>
   <sfcObjects xsi:type="sfcmodel:Transition" name="T1" startPoint="319,112" endPoint="319,137" condition="TRUE" constraintsRectangle="269,112,100,25" incomingConnections="//@connections.0" outgoingConnections="//@connections.1 //@connections.2"/>
-  <sfcObjects xsi:type="sfcmodel:Step" name="S1" startPoint="251,205" endPoint="251,255" X="false" T="0.0" constraintsRectangle="221,205,60,50" incomingConnections="//@connections.2" outgoingConnections="//@connections.3"/>
-  <sfcObjects xsi:type="sfcmodel:Transition" name="T1" startPoint="321,286" endPoint="321,311" condition="TRUE" constraintsRectangle="271,286,100,25" incomingConnections="//@connections.3 //@connections.4"/>
+  <sfcObjects xsi:type="sfcmodel:Step" name="S2" startPoint="251,192" endPoint="251,242" X="false" T="0.0" constraintsRectangle="221,192,60,50" incomingConnections="//@connections.2" outgoingConnections="//@connections.3"/>
+  <sfcObjects xsi:type="sfcmodel:Transition" name="T2" startPoint="321,286" endPoint="321,311" condition="TRUE" constraintsRectangle="271,286,100,25" incomingConnections="//@connections.3 //@connections.4"/>
   <connections xsi:type="sfcmodel:Selection" stepIn="//@sfcObjects.0" transitionOut="//@sfcObjects.2" polylineConnection="319,87,319,111" userPriorityEnabled="false"/>
-  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.2" stepOut="//@sfcObjects.1" connectionType="FromTransitionToStep" polylineConnection="319,137,391,197">
-    <bendpoints>319,167</bendpoints>
-    <bendpoints>391,167</bendpoints>
+  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.2" stepOut="//@sfcObjects.1" connectionType="FromTransitionToStep" polylineConnection="319,137,391,190">
+    <bendpoints>319,160</bendpoints>
+    <bendpoints>391,160</bendpoints>
   </connections>
-  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.2" stepOut="//@sfcObjects.3" connectionType="FromTransitionToStep" polylineConnection="319,137,251,204">
-    <bendpoints>319,167</bendpoints>
-    <bendpoints>251,167</bendpoints>
+  <connections xsi:type="sfcmodel:Simultaneous" transitionIn="//@sfcObjects.2" stepOut="//@sfcObjects.3" connectionType="FromTransitionToStep" polylineConnection="319,137,251,191">
+    <bendpoints>319,160</bendpoints>
+    <bendpoints>251,160</bendpoints>
   </connections>
-  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.3" transitionOut="//@sfcObjects.4" polylineConnection="251,255,321,285">
+  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.3" transitionOut="//@sfcObjects.4" polylineConnection="251,242,321,285">
     <bendpoints>251,270</bendpoints>
     <bendpoints>321,270</bendpoints>
   </connections>
-  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.1" transitionOut="//@sfcObjects.4" polylineConnection="391,248,321,285">
+  <connections xsi:type="sfcmodel:Simultaneous" stepIn="//@sfcObjects.1" transitionOut="//@sfcObjects.4" polylineConnection="391,241,321,285">
     <bendpoints>391,270</bendpoints>
     <bendpoints>321,270</bendpoints>
   </connections>
