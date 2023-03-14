@@ -13,8 +13,8 @@ import sfcEditor.SimultaneousPolylineConnectionLocator;
 
 public class SimultaneousPolylineConnection extends PolylineConnection {
 
-	private static int LINE_HEIGHT = 5;
-	private static int LINE_BORDER_HEIGHT = 1;
+	private static int DISTANCE_BETWEEN_LINES = 5;
+	private static int LINE_BORDER_WIDTH = 1;
 	private Figure figure;
 	
 	public SimultaneousPolylineConnection() {
@@ -25,7 +25,7 @@ public class SimultaneousPolylineConnection extends PolylineConnection {
 		int x = Math.min(x1, x2);
 		int width = Math.abs(x1 - x2) + 1;
 		IFigure simultaneousLine = getSimulaneousLine(width);
-		this.add(simultaneousLine, new SimultaneousPolylineConnectionLocator(this, x, y - (LINE_HEIGHT / 2), width));
+		this.add(simultaneousLine, new SimultaneousPolylineConnectionLocator(this, x, y - (DISTANCE_BETWEEN_LINES / 2), width));
 	}
 	
 	private IFigure getSimulaneousLine(int width) {
@@ -34,7 +34,7 @@ public class SimultaneousPolylineConnection extends PolylineConnection {
 			this.figure.setBackgroundColor(ColorConstants.white);
 			this.figure.setBorder(new MyAbstractBorder());
 			this.figure.setOpaque(true);
-			this.figure.setSize(width, LINE_HEIGHT);
+			this.figure.setSize(width, DISTANCE_BETWEEN_LINES);
 		}
 		return this.figure;
 	}
@@ -46,7 +46,7 @@ public class SimultaneousPolylineConnection extends PolylineConnection {
 	private class MyAbstractBorder extends LineBorder {
 
 		public MyAbstractBorder() {
-			super(ColorConstants.black, LINE_BORDER_HEIGHT);
+			super(ColorConstants.black, LINE_BORDER_WIDTH);
 		}
 		
 		@Override
